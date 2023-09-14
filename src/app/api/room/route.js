@@ -15,23 +15,23 @@ export const GET = async () => {
 export const POST = async (request) => {
   const payload = checkToken();
 
-  // return NextResponse.json(
-  //   {
-  //     ok: false,
-  //     message: "Invalid token",
-  //   },
-  //   { status: 401 }
-  // );
+  return NextResponse.json(
+    {
+      ok: false,
+      message: "Invalid token",
+    },
+    { status: 401 }
+  );
 
   readDB();
 
-  // return NextResponse.json(
-  //   {
-  //     ok: false,
-  //     message: `Room ${"replace this with room name"} already exists`,
-  //   },
-  //   { status: 400 }
-  // );
+  return NextResponse.json(
+    {
+      ok: false,
+      message: `Room ${"replace this with room name"} already exists`,
+    },
+    { status: 400 }
+  );
 
   const roomId = nanoid();
 
